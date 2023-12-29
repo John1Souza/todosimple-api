@@ -18,7 +18,7 @@ public class Task {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne //define que a relação com a classe e de muitos para um, muitas classes podem ter apenas um user
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 
@@ -29,6 +29,7 @@ public class Task {
     private String description;
 
     public Task() {
+
     }
 
     public Task(Long id, User user, String description) {
