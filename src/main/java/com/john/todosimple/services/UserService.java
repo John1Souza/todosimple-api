@@ -1,7 +1,7 @@
 package com.john.todosimple.services;
 
 import com.john.todosimple.models.User;
-import com.john.todosimple.repositories.TaskRepository;
+//import com.john.todosimple.repositories.TaskRepository;
 import com.john.todosimple.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +16,8 @@ public class UserService {
     @Autowired // serve para instanciar como se fosse um constructor
     private UserRepository userRepository;
 
-    @Autowired // serve para instanciar como se fosse um constructor
-    private TaskRepository taskRepository;
+//    @Autowired // serve para instanciar como se fosse um constructor
+//    private TaskRepository taskRepository;
 
    public User findById(Long id){
        Optional<User> user = this.userRepository.findById(id);
@@ -30,7 +30,7 @@ public class UserService {
    public User create(User obj){
        obj.setId(null);
        obj = this.userRepository.save(obj); // Cria e salva o novo usuário
-       this.taskRepository.saveAll(obj.getTasks());
+//       this.taskRepository.saveAll(obj.getTasks());
        return obj;
    }
 
